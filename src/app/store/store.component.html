@@ -4,6 +4,7 @@
 
         <div class="col bg-dark text-white">
             <a class="navbar-brand">SPORTS STORE</a>
+            <cart-summary></cart-summary>
         </div>
 
     </div>
@@ -31,7 +32,15 @@
                         {{ product.price | currency:"USD":"symbol":"2.2-2" }}
                     </span>
                 </h4>
-                <div class="card-text bg-white p-1">{{product.description}}</div>
+                <div class="card-text bg-white p-1">
+                    {{product.description}}
+
+                    <!--Cuando hago click llama a la funcion y le manda el producto en en el que estoy.-->
+                    <button class="btn btn-success btn-sm float-right" (click)="addProductToCart(product)">
+                        Add To Cart
+                    </button>
+
+                </div>
             </div>
 
             <!-- PAGINACION  -->

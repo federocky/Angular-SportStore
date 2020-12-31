@@ -8,6 +8,12 @@ import { Product } from "../model/product.model";
  */
 import { ProductRepository } from "../model/product.repository"; 
 
+//Agregamos el carro y sus funcionalidades
+import { Cart } from "../model/cart.model";
+
+//importamos esto porque vamos a enrutar desde ciertas etiquetas HTML
+import { Router } from "@angular/router";
+
 
 @Component({
     selector: "store",
@@ -21,7 +27,10 @@ export class StoreComponent {
     public productsPerPage = 4;
     public selectedPage = 1;
     
-    constructor(private repository: ProductRepository) { }
+    constructor(private repository: ProductRepository,
+                private cart: Cart,
+                private router: Router ///esta linea para incluir los metodos de Router
+        ) { }
 
     //almaceno en la variable products todos los productos
     get products(): Product[] {
@@ -62,6 +71,14 @@ export class StoreComponent {
     */
     get pageCount(): number {
         return Math.ceil(this.repository.getProducts(this.selectedCategory).length / this.productsPerPage);
+    }
+
+    /**
+     * Agrega productos al carro.
+     */
+    addProductToCart(product: Product) {
+        this.cart.addLine(product);
+        this.router.navigateByUrl("/cart"); //cuando agregamos un producto nos lleva a cart
     }
 
 

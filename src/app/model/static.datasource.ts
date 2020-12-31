@@ -2,6 +2,10 @@ import { Injectable } from "@angular/core";
 import { Product } from "./product.model";
 import { Observable, from } from "rxjs";
 
+//capitulo 2 para manejar los pedidos
+import { Order } from "./order.model";
+
+
 /**
  * El decorador injectable se aplica para decirle a angular
  * que esta clase va a ser utilizada como un servicio. Por tanto se permitira
@@ -34,6 +38,12 @@ export class StaticDataSource {
      */
     getProducts(): Observable<Product[]> {
         return from([this.products]);
+    }
+
+    
+    saveOrder(order: Order): Observable<Order> {
+        console.log(JSON.stringify(order));
+        return from([order]);
     }
 
 }

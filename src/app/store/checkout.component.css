@@ -1,0 +1,11 @@
+input.ng-dirty.ng-invalid {
+    border: 2px solid #ff0000
+}
+
+input.ng-dirty.ng-valid {
+    border: 2px solid #6bc502
+}
+
+
+/*son basicamente estilos dados por el ngForm que dice si son 
+validos o no*/
