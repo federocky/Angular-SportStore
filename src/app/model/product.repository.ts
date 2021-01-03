@@ -1,7 +1,9 @@
 import { Injectable } from "@angular/core";
 import { Product } from "./product.model";
-import { StaticDataSource } from "./static.datasource";
 
+//en el capitul * comentamos el static data source ya que no lo estam os usando
+//import { StaticDataSource } from "./static.datasource";
+import { RestDataSource } from "./rest.datasource";
 /**
  * El decorador injectable se aplica para decirle a angular
  * que esta clase va a ser utilizada como un servicio. Por tanto se permitira
@@ -19,7 +21,7 @@ export class ProductRepository {
    * el ProductRepository constructor y crear un nuevo objeto. ¿? algo relacionado
    * con el observable.
    */
-  constructor(private dataSource: StaticDataSource) {
+  constructor(private dataSource: RestDataSource) {
 
     dataSource.getProducts().subscribe((data) => {
 
@@ -48,5 +50,36 @@ export class ProductRepository {
 
   getCategories(): string[] {
     return this.categories;
+  }
+
+  //metoodo del capitulo 9 de administracion
+  //que permite guardar un producto
+  saveProduct(product: Product) {
+
+    //si paso la validacion guardo el producto en products
+    if (product.id == null || product.id == 0) {
+      this.dataSource.saveProduct(product)
+      .subscribe(p => this.products.push(p));
+
+    } else {
+      
+
+      this.dataSource.updateProduct(product)
+      .subscribe(p => {
+        this.products.splice(this.products.
+        findIndex(p => p.id == product.id), 1, product);
+      });
+    }
+  }
+
+  /**
+   * Elimina un producto por id
+   */
+  deleteProduct(id: number) {
+    
+    this.dataSource.deleteProduct(id).subscribe(p => {
+    this.products.splice(this.products.
+    findIndex(p => p.id == id), 1);
+    })
   }
 }

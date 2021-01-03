@@ -21,6 +21,12 @@ import { StoreFirstGuard } from "./storeFirst.guard";
     { path: "store", component: StoreComponent, canActivate: [StoreFirstGuard] },
     { path: "cart", component: CartDetailComponent, canActivate: [StoreFirstGuard] },
     { path: "checkout", component: CheckoutComponent, canActivate: [StoreFirstGuard] },
+
+    //vemos que ahora importamos el path desde el admin.module.ts que creamos previamente.
+    //le decimos a angular que cuando pulse admin me carge el otro modulo.
+    { path: "admin", loadChildren: () => import("./admin/admin.module").then(m => m.AdminModule),
+      canActivate: [StoreFirstGuard]
+      },
     { path: "**", redirectTo: "/store" }
     ])],
   providers: [StoreFirstGuard],

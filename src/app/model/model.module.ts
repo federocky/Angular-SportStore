@@ -13,6 +13,10 @@ import { OrderRepository } from "./order.repository";
 import { RestDataSource } from "./rest.datasource";
 import { HttpClientModule } from "@angular/common/http";
 
+//esto para la autenticacion, capitulo 9
+import { AuthService } from "./auth.service";
+
+
 /**
  * el decorador ngmodule se utiliza para crear feature modules y sus propiedades
  * le dicen a angular como el modulon debe ser utilizado.
@@ -22,6 +26,8 @@ import { HttpClientModule } from "@angular/common/http";
  */
 @NgModule({
     imports: [HttpClientModule],
-    providers: [ProductRepository, Cart, Order, OrderRepository, { provide: StaticDataSource, useClass: RestDataSource }]
+    providers: [ProductRepository, Cart, Order, OrderRepository, 
+        { provide: StaticDataSource, useClass: RestDataSource },
+        RestDataSource, AuthService]
 })
 export class ModelModule { }
