@@ -16,6 +16,11 @@ import { HttpClientModule } from "@angular/common/http";
 //esto para la autenticacion, capitulo 9
 import { AuthService } from "./auth.service";
 
+//añadido en el capitulo 10 es la clase que se encarga de comprobar el estado
+//de la conexion.
+import { ConnectionService } from "./connection.service";
+
+
 
 /**
  * el decorador ngmodule se utiliza para crear feature modules y sus propiedades
@@ -28,6 +33,6 @@ import { AuthService } from "./auth.service";
     imports: [HttpClientModule],
     providers: [ProductRepository, Cart, Order, OrderRepository, 
         { provide: StaticDataSource, useClass: RestDataSource },
-        RestDataSource, AuthService]
+        RestDataSource, AuthService, ConnectionService]
 })
 export class ModelModule { }

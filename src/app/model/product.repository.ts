@@ -33,7 +33,7 @@ export class ProductRepository {
     });
   }
 
-
+  //me devuelve todos los preductos de todas o una categoria especifica
   getProducts(category: string = null): Product[] {
 
     return this.products.filter(
@@ -41,7 +41,7 @@ export class ProductRepository {
     );
   }
 
-
+  //devuelve producto pedido
   getProduct(id: number): Product {
 
     return this.products.find((p) => p.id == id);

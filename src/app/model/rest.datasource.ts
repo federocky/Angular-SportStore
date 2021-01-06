@@ -25,7 +25,11 @@ export class RestDataSource {
 
     constructor(private http: HttpClient) {
         //aqui utilizamos el protoclo que es HTTP y el puerto 3500 en este caso
-        this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
+        //this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
+        
+        //En el cap 10 cambiamos esto
+        this.baseUrl = "/api/"
+
     }
 
     //utilizamos los mismos metodos que antes para al http
