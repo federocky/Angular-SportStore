@@ -28,7 +28,7 @@ export class RestDataSource {
         //this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
         
         //En el cap 10 cambiamos esto
-        this.baseUrl = "/api/"
+        this.baseUrl = "http://localhost:3500/"
 
     }
 

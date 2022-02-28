@@ -1,27 +1,40 @@
-# SportsStore
+# Sports Store
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+![Project Image](./main_img.png)
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Description
+A shoping cart application made following along "Pro Angular 9 - Build powerful and Dynamic Web Apps" book from author Adam Freeman. Nice app made learning Angular, complete checkout process made and admin features.
 
-## Code scaffolding
+[Udemy - Fernando Herrera - Angular: De cero a experto.](https://www.udemy.com/share/101Wds3@S0opZ16xnJWAL-7hIXfK4Y1e_EOreKyocpG8FYixECNXl13CqSRfa3r39VgOdi_7Hg==/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Use
 
-## Running unit tests
+To run the application you need to run npm install to get the needed packages, 
+`npm run json` to run the backend. This is configured to run in the port 3500. Go to http://localhost:3500/products to confirm it is working. To run the frontend `ng serve -o` will open in browser.
+To access to admin features the credentials are hardcoded in the file authMiddleware.js.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+Admin Panel: 
+![admin panel](./admin_panel.png)
+---
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Technologies
 
-## Further help
+- Angular
+- Type Script
+- Bootstrap
+- Node, Express, JWT
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+
+## Author Info
+
+- Linkedin - [Federico Andrés Jácome Castañeda](https://www.linkedin.com/in/federicojacome/)
+- Website - [To be added](https://github.com/federocky)
+
+[Back To The Top](#read-me-template)
