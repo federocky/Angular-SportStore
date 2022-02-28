@@ -7,7 +7,6 @@
 ### Description
 A shoping cart application made following along "Pro Angular 9 - Build powerful and Dynamic Web Apps" book from author Adam Freeman. Nice app made learning Angular, complete checkout process made and admin features.
 
-[Udemy - Fernando Herrera - Angular: De cero a experto.](https://www.udemy.com/share/101Wds3@S0opZ16xnJWAL-7hIXfK4Y1e_EOreKyocpG8FYixECNXl13CqSRfa3r39VgOdi_7Hg==/)
 
 
 ---
